@@ -3,11 +3,11 @@ include 'PHP_Animashaun/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $update_id = $_POST['update_id'];
-    $updated_firstname_kn = $_POST['updated_firstname'];
-    $updated_lastname_kn = $_POST['updated_lastname'];
-    $updated_studentid_kn = $_POST['updated_gym_member_id'];
-    $updated_yearofstudy_kn = $_POST['updated_membership_duration'];
-    $updated_birthplace_kn = $_POST['updated_membership_location'];
+    $updated_firstname = $_POST['updated_firstname'];
+    $updated_lastname = $_POST['updated_lastname'];
+    $updated_gym_member_id = $_POST['updated_gym_member_id'];
+    $updated_membership_duration = $_POST['updated_membership_duration'];
+    $updated_membership_location = $_POST['updated_membership_location'];
 
     $conn = new mysqli($server, $username, $password, $database);
 

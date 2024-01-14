@@ -1,13 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+        body{
+            background-image: url("images/bg2.jpg")
+        };
+        /* Place the CSS code here */
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+}
+
+/* Style for table cells */
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff; /* Set the background color to white */
+}
+
+/* Style for alternate rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+        button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Style for the navigation */
+        nav {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Style for the navigation links */
+nav a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    border: 1px solid #2980b9;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+/* Remove underline on hover */
+nav a:hover {
+    text-decoration: none;
+}
+
+/* Style for the navigation table */
+nav table {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Style for navigation table cells */
+nav td {
+    padding: 0;
+}
+
+/* Style for navigation table links */
+nav td a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db;
+    border: 1px solid #2980b9;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+/* Remove underline on hover for navigation table links */
+nav td a:hover {
+    text-decoration: none;
+}
+    </style>
     <?php include 'PHP_Animashaun/HeadPartHtml.php'?>
     <?php
     include 'PHP_Animashaun/database.php';
 
     $entry = true;
 
-    if (isset($_POST['firstname'])) {$firstname = $_POST['firstname_kn'];} else {$entry = false;}
+    if (isset($_POST['firstname'])) {$firstname = $_POST['firstname'];} else {$entry = false;}
     if (isset($_POST['lastname'])) {$lastname = $_POST['lastname'];} else {$entry = false;}
     if (isset($_POST['gym_member_id'])) {$gym_member_id = $_POST['gym_member_id'];} else {$entry = false;}
     if (isset($_POST['membership_duration'])) {$membership_duration = $_POST['membership_duration'];} else {$entry = false;}
@@ -69,40 +163,6 @@
         </tr>
         <?php include 'PHP_Animashaun/TableMember.php'?>
     </table>
-
-    <!-- Form for updating student data -->
-    <form action="update_member.php" method="POST">
-        <select name="update_id">
-            <?php
-            $i = 0;
-            while ($i < $num) {
-                $rs->data_seek($i);
-                $row = $rs->fetch_assoc();
-                $option = "<option value=".$row["id"].">";
-                $option .= $row["firstname"].'-';
-                $option .= $row["lastname"].'-';
-                $option .= $row["gym_member_id"].'-';
-                $option .= $row["membership_duration"].'-';
-                $option .= $row["membership_location"];
-                $option .= "</option>";
-                echo $option;
-                $i++;
-            }
-            ?>
-        </select>
-
-        <table>
-            <tr><td>Update GYM Member Data</td></tr>
-            <tr><td>Firstname</td><td><input type="text" name="updated_firstname"></td></tr>
-            <tr><td>Student Lastname</td><td><input type="text" name="updated_lastname"></td></tr>
-            <tr><td>Student ID</td><td><input type="text" name="updated_gym_member_id"></td></tr>
-            <tr><td>Year of Study</td><td><input type="text" name="updated_membership_duration"></td></tr>
-            <tr><td>Birth Place Location</td><td><input type="text" name="updated_membership_location"></td></tr>
-        </table>
-        
-        <input type="submit" value="Update">
-    </form>
-
     <?php include 'PHP_Animashaun/nav.php'?>
     <?php include 'PHP_Animashaun/footer.php'?>
 </body>
