@@ -165,13 +165,45 @@ nav td a {
 nav td a:hover {
     text-decoration: none;
 }
+
+/* Style for the motivation div */
+#motivation {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+/* Style for the div elements inside motivation */
+#motivation div {
+    text-align: center;
+    background-color: #fff; /* Set the background color to white */
+    padding: 10px; /* Add some padding for spacing */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the images inside the div elements */
+#motivation img {
+    width: 200px; /* Set a fixed width */
+    height: 200px; /* Set a fixed height */
+    border-radius: 10px;
+}
     </style>
     <?php include 'PHP_Animashaun/HeadPartHtml.php'?>
     </head>
 <body>
     <?php include 'PHP_Animashaun/header.php'?>
     <?php include 'PHP_Animashaun/article.php'?>
-    <div>
+    <div id="motivation">
+        <div id="div1">
+            <img src="images/img1.webp" alt="Angkat Beban">
+        </div>
+        <div id="div2">
+            <img src="images/pek.jpg" alt="Peck Deck">
+        </div>
+        <div id="div3">
+            <img src="images/thread.jpg" alt="">
+        </div>
         
     </div>
     <?php include 'PHP_Animashaun/nav.php'?>
