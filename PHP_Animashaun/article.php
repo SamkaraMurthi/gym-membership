@@ -1,6 +1,6 @@
 <?php 
 echo '<article>';
-echo 'Manage your data easily<br>';
-echo 'Make Clean and Readable Data<br>';
+echo 'Welcome to Our GYM<br>';
+echo 'You Can Add new Data and Edit it Here<br>';
 echo '</article>';
 ?>

@@ -2,5 +2,5 @@
 $username = 'root';
 $password = '';
 $server = 'localhost';
-$database = 'studentdatabase';
+$database = 'gymmembersship';
 ?>
